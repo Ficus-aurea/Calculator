@@ -42,8 +42,9 @@ cd Calculator
 
 ### 2. Запуск приложения
 
+```bash
 python calculator.py
-
+```
 
 ## Структура проекта
 
