@@ -27,15 +27,17 @@
 
 ### 1. Клонирование репозитория
 
+```bash
 git clone https://github.com/Ficus-aurea/Calculator.git
+```
 
-
+```bash
 pip install -r requirements.txt
+```
 
-
+```bash
 cd Calculator
-
-
+```
 
 
 ### 2. Запуск приложения
