@@ -44,7 +44,6 @@ class CalculatorApp:
         self.root.title("Калькулятор")
         self.root.geometry("320x500") 
         self.root.resizable(True, True)
-        
         self.root.configure(bg="black")
 
         self.input_text = tk.StringVar()
@@ -55,17 +54,31 @@ class CalculatorApp:
         btns_frame = self.create_buttons()
         btns_frame.pack(expand=True, fill=tk.BOTH)
 
+        self.root.bind("<Key>", self.process_key)
+        
+        
         self.root.bind('<Return>', lambda event: self.btn_equal())
         self.root.bind('<BackSpace>', lambda event: self.btn_backspace())
+        self.root.bind('<Escape>', lambda event: self.btn_clear()) 
+        
+
+    def process_key(self, event):
+        char = event.char
+        
+        
+        if char in '0123456789.+-*/':
+            self.on_click(char)
 
     def create_display(self):
         frame = tk.Frame(self.root, bd=0, bg="black")
-        
+       
         input_field = tk.Entry(frame, font=('Arial', 30, 'bold'), textvariable=self.input_text, 
-                               bg="black", fg="#FF0000", bd=0, justify=tk.RIGHT, insertbackground="#FF0000")
+                               bg="black", fg="#FF0000", bd=0, justify=tk.RIGHT, 
+                               insertbackground="#FF0000", state="readonly", readonlybackground="black", takefocus=0)
+        
         input_field.pack(side=tk.TOP, fill=tk.BOTH, ipady=20, padx=10, pady=10) 
         return frame
-
+    
     def create_buttons(self):
         
         frame = tk.Frame(self.root, bg="black")
