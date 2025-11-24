@@ -28,8 +28,14 @@
 ### 1. Клонирование репозитория
 
 git clone https://github.com/Ficus-aurea/Calculator.git
-cd Calculator
+
+
 pip install -r requirements.txt
+
+
+cd Calculator
+
+
 
 
 ### 2. Запуск приложения
